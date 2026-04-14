@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wholeness Natural Food & Spices</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2d6a2f;
+    --green-light: #4caf50;
+    --green-glow: #4BEF43;
+    --earth: #8b4513;
+    --earth-light: #c0692a;
+    --cream: #fdf6ec;
+    --warm-white: #fff9f2;
+    --gold: #d4a017;
+    --dark: #1a1a1a;
+    --text: #2c2c2c;
+    --red-accent: #c0392b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,249,242,0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(45,106,47,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .nav-logo-text span {
+    color: var(--earth);
+    display: block;
+    font-size: 0.65rem;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green-light);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-cta {
+    background: var(--green);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--green-light) !important; color: white !important; }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--green);
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0e2b10 0%, #1a4a1c 40%, #2d6a2f 70%, #3d8b40 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 80% 50%, rgba(75,239,67,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(192,105,42,0.15) 0%, transparent 50%);
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-linear-gradient(
+      45deg,
+      white 0px, white 1px,
+      transparent 1px, transparent 60px
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(75,239,67,0.15);
+    border: 1px solid rgba(75,239,67,0.3);
+    color: var(--green-glow);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-tag::before {
+    content: '🌿';
+    font-size: 0.9rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: white;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--green-glow);
+    display: block;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 42px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--green-glow);
+    color: #0e2b10;
+    padding: 16px 36px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+    box-shadow: 0 4px 20px rgba(75,239,67,0.3);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(75,239,67,0.4);
+  }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 14px 34px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .btn-outline:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 52px;
+    animation: fadeUp 0.8s 0.4s ease both;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-item { text-align: left; }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--green-glow);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  .hero-image-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    padding-left: 60px;
+    animation: fadeIn 1s 0.3s ease both;
+  }
+
+  .hero-img-wrap {
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .hero-img-wrap:first-child {
+    grid-row: span 2;
+    transform: translateY(-20px);
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+  }
+
+  .hero-img-wrap:hover img { transform: scale(1.05); }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: var(--green);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 2px;
+  }
+
+  /* ---- TRUST BAR ---- */
+  .trust-bar {
+    background: var(--green);
+    padding: 16px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .trust-icon { font-size: 1.2rem; }
+
+  /* ---- SECTION COMMONS ---- */
+  section { padding: 100px 5%; }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--green-light);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ---- PRODUCTS ---- */
+  .products-section {
+    background: var(--cream);
+  }
+
+  .products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    gap: 24px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transition: all 0.35s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(45,106,47,0.15);
+  }
+
+  .product-img-wrap {
+    position: relative;
+    height: 280px;
+    background: #f5f5f0;
+    overflow: hidden;
+  }
+
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+
+  .product-label-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--green);
+    color: white;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 2px;
+  }
+
+  .nafdac-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255,255,255,0.95);
+    color: var(--green);
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 5px 8px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .product-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .product-desc {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-weight: 300;
+    flex-grow: 1;
+  }
+
+  .product-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--green);
+  }
+
+  .product-price span {
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 400;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .product-weight {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #f5f5f0;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .add-to-cart:hover {
+    background: var(--green-light);
+    transform: scale(1.02);
+  }
+
+  /* ---- WHY US ---- */
+  .why-section {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .why-image {
+    position: relative;
+  }
+
+  .why-main-img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+    display: block;
+  }
+
+  .why-accent-box {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: var(--green);
+    color: white;
+    padding: 28px 32px;
+    border-radius: 4px;
+    box-shadow: 0 12px 40px rgba(45,106,47,0.4);
+    text-align: center;
+  }
+
+  .why-accent-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--green-glow);
+  }
+
+  .why-accent-text {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  .why-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .why-feature {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(45,106,47,0.08);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .why-feature-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .why-feature-text {
+    font-size: 0.78rem;
+    color: #888;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ---- ORDER SECTION ---- */
+  .order-section {
+    background: linear-gradient(135deg, #0e2b10 0%, #1a4a1c 50%, #2d6a2f 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .order-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(75,239,67,0.06) 0%, transparent 70%);
+  }
+
+  .order-section .section-label { justify-content: center; color: var(--green-glow); }
+  .order-section .section-label::before { background: var(--green-glow); }
+  .order-section .section-title { color: white; margin: 0 auto 16px; }
+  .order-section .section-desc { color: rgba(255,255,255,0.65); margin: 0 auto 56px; }
+
+  .order-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 56px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .order-method {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(75,239,67,0.15);
+    border-radius: 4px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+  }
+
+  .order-method:hover {
+    background: rgba(75,239,67,0.1);
+    border-color: rgba(75,239,67,0.4);
+    transform: translateY(-4px);
+  }
+
+  .order-method-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .order-method-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .order-method-info {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .order-method-contact {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--green-glow);
+    margin-top: 10px;
+    display: block;
+  }
+
+  /* ---- CART MODAL ---- */
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 200;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    backdrop-filter: blur(4px);
+  }
+
+  .cart-overlay.active { display: flex; }
+
+  .cart-modal {
+    background: white;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.2);
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .cart-header {
+    padding: 24px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+  }
+
+  .cart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .cart-close {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .cart-close:hover { background: #e0e0e0; }
+
+  .cart-items { padding: 20px 24px; }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .cart-item-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f0f0f0;
+    flex-shrink: 0;
+  }
+
+  .cart-item-details {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .cart-item-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cart-item-weight {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .cart-item-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .qty-btn {
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid #e0e0e0;
+    background: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--dark);
+  }
+
+  .qty-btn:hover { 
+    background: var(--green); 
+    color: white; 
+    border-color: var(--green); 
+    transform: scale(1.1);
+  }
+
+  .qty-btn:active { transform: scale(0.95); }
+
+  .qty-display {
+    font-weight: 700;
+    font-size: 1rem;
+    min-width: 24px;
+    text-align: center;
+  }
+
+  .remove-item {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    margin-left: 4px;
+    transition: all 0.2s;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .remove-item:hover { 
+    color: var(--red-accent); 
+    background: rgba(192, 57, 43, 0.1);
+  }
+
+  .cart-empty {
+    text-align: center;
+    padding: 48px 0;
+    color: #bbb;
+    font-size: 0.9rem;
+  }
+
+  .cart-empty-icon { font-size: 3rem; margin-bottom: 12px; display: block; }
+
+  .cart-footer {
+    padding: 24px;
+    border-top: 1px solid #f0f0f0;
+    background: #fafafa;
+  }
+
+  .cart-order-form { margin-top: 20px; }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: all 0.2s;
+    background: white;
+    color: var(--dark);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(45, 106, 47, 0.1);
+  }
+
+  .order-summary {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .order-summary-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--cream);
+  }
+
+  .order-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .order-summary-row:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .order-summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+    padding-top: 16px;
+    border-top: 2px solid var(--green);
+    margin-top: 12px;
+  }
+
+  .submit-order {
+    width: 100%;
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 8px;
+  }
+
+  .submit-order:hover {
+    background: var(--green-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(45,106,47,0.3);
+  }
+
+  /* Cart icon in nav */
+  .cart-nav-btn {
+    position: relative;
+    background: none;
+    border: 2px solid var(--green);
+    color: var(--green);
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .cart-nav-btn:hover { background: var(--green); color: white; }
+
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--red-accent);
+    color: white;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    display: none;
+    box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4);
+  }
+
+  .cart-count.visible { display: flex; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    padding: 60px 5% 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--green-glow);
+    margin-bottom: 8px;
+  }
+
+  .footer-brand-sub {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+  }
+
+  .footer-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 300px;
+  }
+
+  .footer-heading {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 300;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--green-glow); }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    font-weight: 300;
+  }
+
+  .footer-contact-item a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-contact-item a:hover { color: var(--green-glow); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nafdac-note {
+    background: rgba(75,239,67,0.08);
+    border: 1px solid rgba(75,239,67,0.2);
+    color: var(--green-glow);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  /* ---- TOAST ---- */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--green);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    z-index: 300;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* ---- ANIMATIONS ---- */
+  @keyframes fadeUp {
+    from { transform: translateY(24px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 1024px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    html { font-size: 15px; }
+    
+    nav {
+      height: 64px;
+      padding: 0 4%;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: rgba(255,249,242,0.98);
+      flex-direction: column;
+      padding: 20px;
+      gap: 16px;
+      border-bottom: 2px solid rgba(45,106,47,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      padding: 12px;
+      text-align: center;
+      display: block;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+      order: -1;
+    }
+
+    .cart-nav-btn {
+      width: 44px;
+      height: 44px;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 90px 4% 60px;
+      min-height: auto;
+      padding-top: 100px;
+    }
+
+    .hero-image-grid { display: none; }
+    
+    .hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    .hero-stats {
+      gap: 24px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .trust-bar {
+      gap: 20px;
+      padding: 16px 4%;
+    }
+
+    .trust-item {
+      font-size: 0.7rem;
+    }
+
+    section {
+      padding: 60px 4%;
+    }
+
+    .products-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .product-img-wrap {
+      height: 240px;
+    }
+
+    .why-section {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .why-image {
+      display: none;
+    }
+
+    .why-features {
+      grid-template-columns: 1fr;
+      margin-top: 32px;
+    }
+
+    .why-feature {
+      padding: 16px;
+      background: rgba(45,106,47,0.03);
+      border-radius: 8px;
+    }
+
+    .order-methods {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .footer-desc {
+      max-width: 100%;
+    }
+
+    .footer-links {
+      align-items: center;
+    }
+
+    .footer-contact-item {
+      justify-content: center;
+    }
+
+    .cart-overlay {
+      align-items: flex-end;
+    }
+
+    .cart-modal {
+      max-height: 90vh;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .cart-items {
+      padding: 16px;
+    }
+
+    .cart-item {
+      padding: 12px 0;
+    }
+
+    .cart-item-img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .cart-footer {
+      padding: 20px 16px;
+      padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .order-summary {
+      padding: 20px;
+    }
+
+    .toast {
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      text-align: center;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .cart-item-controls {
+      gap: 8px;
+    }
+
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  /* Success screen */
+  .success-screen {
+    text-align: center;
+    padding: 40px 0;
+    display: none;
+  }
+
+  .success-screen.active { display: block; }
+  .success-icon { font-size: 4rem; margin-bottom: 16px; display: block; }
+  .success-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .success-text {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.7;
+    max-width: 340px;
+    margin: 0 auto 24px;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1ebe5d;
+    transform: translateY(-2px);
+  }
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-text">
+      Wholeness
+      <span>Natural Food & Spices</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#order" class="nav-cta">Shop Now</a></li>
+  </ul>
+  <button class="cart-nav-btn" onclick="toggleCart()">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-tag">100% Natural · NAFDAC Certified</div>
+    <h1 class="hero-title">
+      Pure. Natural.
+      <em>Wholeness.</em>
+    </h1>
+    <p class="hero-subtitle">
+      From our farm to your kitchen. Premium quality Nigerian food products and spices, traditionally processed with zero additives. Taste the difference that nature makes.
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">Shop Products</a>
+      <a href="#order" class="btn-outline">Place an Order</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">All Natural</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Additives</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Products</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image-grid">
+    <div class="hero-img-wrap">
+      <img src="Wholeness Beans.png" alt="Beans Powder">
+      <span class="hero-badge">Beans Powder</span>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="Wholeness Ginger powder.png" alt="Ginger Powder">
+      <span class="hero-badge">Ginger Powder</span>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="Wholeness Turmeric .png" alt="Turmeric">
+      <span class="hero-badge">Turmeric</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✅</span> NAFDAC Certified</div>
+  <div class="trust-item"><span class="trust-icon">🌿</span> 100% Natural</div>
+  <div class="trust-item"><span class="trust-icon">🚚</span> Nigeria-Wide Delivery</div>
+  <div class="trust-item"><span class="trust-icon">🏆</span> Premium Quality</div>
+  <div class="trust-item"><span class="trust-icon">📞</span> +234 806 874 3168</div>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-label">Our Products</div>
+      <h2 class="section-title">Farm-Fresh.<br>Kitchen-Ready.</h2>
+    </div>
+    <p class="section-desc">Every product is carefully sourced, naturally processed, and packed with the nutrients your body deserves.</p>
+  </div>
+
+  <div class="products-grid" id="productsGrid">
+    <!-- Cards injected by JS -->
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="about">
+  <div class="why-image">
+    <img src="Wholeness Ginger powder.png" alt="Wholeness Quality" class="why-main-img">
+    <div class="why-accent-box">
+      <div class="why-accent-num">100%</div>
+      <div class="why-accent-text">Pure & Natural</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-label">Why Wholeness</div>
+    <h2 class="section-title">The Standard of<br>Natural Goodness</h2>
+    <p class="section-desc">We believe food should nourish, not harm. Every product we make carries the promise of purity — no artificial flavours, no preservatives, just nature at its best.</p>
+
+    <div class="why-features">
+      <div class="why-feature">
+        <div class="why-icon">🌱</div>
+        <div>
+          <div class="why-feature-title">Zero Additives</div>
+          <div class="why-feature-text">No preservatives, no artificial flavours. Just pure, natural goodness.</div>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon">🏅</div>
+        <div>
+          <div class="why-feature-title">NAFDAC Certified</div>
+          <div class="why-feature-text">Registered and approved by Nigeria's food regulatory authority.</div>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon">🔬</div>
+        <div>
+          <div class="why-feature-title">Quality Tested</div>
+          <div class="why-feature-text">Every batch is processed with strict hygiene and quality standards.</div>
+        </div>
+      </div>
+      <div class="why-feature">
+        <div class="why-icon">📦</div>
+        <div>
+          <div class="why-feature-title">Tamper-Proof</div>
+          <div class="why-feature-text">Sealed for freshness, so you get the product exactly as intended.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER SECTION -->
+<section class="order-section" id="order">
+  <div style="position:relative;z-index:2;">
+    <div class="section-label">Place Your Order</div>
+    <h2 class="section-title">Ready to Order?</h2>
+    <p class="section-desc">Add products to your cart and submit your order, or reach us directly via WhatsApp or phone call.</p>
+
+    <div class="order-methods">
+      <div class="order-method" onclick="toggleCart()">
+        <span class="order-method-icon">🛒</span>
+        <div class="order-method-title">Order Online</div>
+        <div class="order-method-info">Add to cart and fill your details. We'll contact you to confirm.</div>
+        <span class="order-method-contact">Open Cart →</span>
+      </div>
+
+      <a href="https://wa.me/2348068743168" target="_blank" class="order-method">
+        <span class="order-method-icon">💬</span>
+        <div class="order-method-title">WhatsApp</div>
+        <div class="order-method-info">Chat us directly on WhatsApp for quick orders and inquiries.</div>
+        <span class="order-method-contact">+234 806 874 3168</span>
+      </a>
+
+      <a href="tel:+2348068743168" class="order-method">
+        <span class="order-method-icon">📞</span>
+        <div class="order-method-title">Call Us</div>
+        <div class="order-method-info">Speak to us directly. We're happy to take your order by phone.</div>
+        <span class="order-method-contact">+234 806 874 3168</span>
+      </a>
+    </div>
+
+    <a href="https://wa.me/2348068743168" target="_blank" class="btn-primary" style="font-size:0.85rem;">
+      💬 Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Wholeness</div>
+      <div class="footer-brand-sub">Natural Food & Spices</div>
+      <p class="footer-desc">Bringing you the finest natural Nigerian food products and spices. Pure, natural, and wholesome — the way food was meant to be.</p>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#order">Order Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact</div>
+      <div class="footer-contact-item">📞 <a href="tel:+2348068743168">+234 806 874 3168</a></div>
+      <div class="footer-contact-item">💬 <a href="https://wa.me/2348068743168" target="_blank">WhatsApp Us</a></div>
+      <div class="footer-contact-item" style="margin-top:20px;">
+        <div>
+          <div style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px;">Regulatory</div>
+          <div class="nafdac-note">NAFDAC REG NO: A8-113639L</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Wholeness Natural Food and Spices. All rights reserved.</span>
+    <span style="color:rgba(255,255,255,0.3);">Made in Nigeria 🇳🇬</span>
+  </div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="handleOverlayClick(event)">
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+      <div class="cart-title">Your Cart</div>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+
+    <div id="cartItemsSection">
+      <div class="cart-items" id="cartItemsList"></div>
+
+      <div class="cart-footer">
+        <div id="orderSummary" class="order-summary" style="display:none;">
+          <div class="order-summary-title">Order Summary</div>
+          <div id="summaryRows"></div>
+          <div class="order-summary-total">
+            <span>Estimated Total</span>
+            <span id="summaryTotalPrice">₦0</span>
+          </div>
+        </div>
+
+        <div class="cart-order-form" id="orderForm">
+          <div class="form-group">
+            <label class="form-label">Your Full Name *</label>
+            <input type="text" class="form-input" id="custName" placeholder="e.g. Amara Okafor">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number *</label>
+            <input type="tel" class="form-input" id="custPhone" placeholder="+234 ...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Address *</label>
+            <input type="text" class="form-input" id="custAddress" placeholder="Your delivery address">
+          </div>
+          <button class="submit-order" onclick="submitOrder()">🛒 Submit Order via WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-screen" id="successScreen">
+      <span class="success-icon">🎉</span>
+      <div class="success-title">Order Sent!</div>
+      <p class="success-text">Your order has been sent to Wholeness via WhatsApp. They'll confirm your order and delivery details shortly.</p>
+      <a href="https://wa.me/2348068743168" target="_blank" class="whatsapp-btn">
+        💬 Open WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  ✅ <span id="toastMsg">Added to cart!</span>
+</div>
+
+<script>
+const products = [
+  {
+    id: 1,
+    name: "Beans Powder",
+    desc: "Ideal for Akara, Moimoi, Ekuru, Beans Soup & more. Stone-ground from premium Nigerian beans.",
+    weight: "1kg",
+    price: 3500,
+    img: "Wholeness Beans.png",
+    nafdac: "A8-113639L",
+    tag: "Best Seller"
+  },
+  {
+    id: 2,
+    name: "Soya Beans Powder",
+    desc: "Perfect for Soya Milk, Soya Cheese and more. Rich in protein, naturally processed.",
+    weight: "1kg",
+    price: 3500,
+    img: "Wholeness Soybeans.png",
+    nafdac: "A8-115639L",
+    tag: "High Protein"
+  },
+  {
+    id: 3,
+    name: "Pepper Soup Spice",
+    desc: "Authentic Nigerian pepper soup blend. The perfect warmth and depth for your pepper soup.",
+    weight: "10g",
+    price: 2500,
+    img: "Wholeness pepper soup.png",
+    nafdac: "A8-116893",
+    tag: "Spice Blend"
+  },
+  {
+    id: 4,
+    name: "Ginger Powder",
+    desc: "Pure, aromatic ginger powder for cooking, teas, and wellness. 100% natural, no fillers.",
+    weight: "100g",
+    price: 2500,
+    img: "Wholeness Ginger powder.png",
+    nafdac: "A8-113639L",
+    tag: "Wellness"
+  },
+  {
+    id: 5,
+    name: "Turmeric Powder",
+    desc: "Premium Nigerian turmeric — vibrant, potent and full of natural curcumin goodness.",
+    weight: "100g",
+    price: 2500,
+    img: "Wholeness Turmeric .png",
+    nafdac: "A8-113640L",
+    tag: "Anti-inflammatory"
+  },
+  {
+    id: 6,
+    name: "Seasoning Powder",
+    desc: "All-purpose natural seasoning blend. Enhances the flavor of soups, stews, rice, and meat dishes without artificial additives.",
+    weight: "100g",
+    price: 2500,
+    img: "Seasoning.png",
+    nafdac: "A8-113640L",
+    tag: "All Purpose"
+  }
+];
+
+let cart = {};
+
+function formatPrice(price) {
+  return '₦' + price.toLocaleString();
+}
+
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+
+function renderProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <span class="product-label-tag">${p.tag}</span>
+        <div class="nafdac-badge">NAFDAC<br>${p.nafdac}</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-price-row">
+          <div class="product-price">${formatPrice(p.price)} <span>only</span></div>
+          <div class="product-weight">${p.weight}</div>
+        </div>
+        <button class="add-to-cart" onclick="addToCart(${p.id})">
+          <span>+</span> Add to Cart
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function addToCart(id) {
+  cart[id] = (cart[id] || 0) + 1;
+  updateCartCount();
+  showToast(`${products.find(p=>p.id===id).name} added to cart!`);
+}
+
+function updateCartCount() {
+  const total = Object.values(cart).reduce((a,b) => a+b, 0);
+  const el = document.getElementById('cartCount');
+  el.textContent = total;
+  el.classList.toggle('visible', total > 0);
+}
+
+function toggleCart() {
+  const overlay = document.getElementById('cartOverlay');
+  const body = document.body;
+  
+  if (overlay.classList.contains('active')) {
+    overlay.classList.remove('active');
+    body.style.overflow = '';
+  } else {
+    overlay.classList.add('active');
+    body.style.overflow = 'hidden';
+    renderCartItems();
+  }
+  
+  // Close mobile menu if open
+  document.getElementById('navLinks').classList.remove('active');
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('cartOverlay')) toggleCart();
+}
+
+function renderCartItems() {
+  const list = document.getElementById('cartItemsList');
+  const summary = document.getElementById('orderSummary');
+  const summaryRows = document.getElementById('summaryRows');
+  const form = document.getElementById('orderForm');
+  const cartKeys = Object.keys(cart).filter(k => cart[k] > 0);
+
+  if (cartKeys.length === 0) {
+    list.innerHTML = `<div class="cart-empty"><span class="cart-empty-icon">🛒</span>Your cart is empty.<br>Browse our products and add some!</div>`;
+    summary.style.display = 'none';
+    form.style.display = 'none';
+    return;
+  }
+
+  let totalPrice = 0;
+
+  list.innerHTML = cartKeys.map(id => {
+    const p = products.find(pr => pr.id == id);
+    const itemTotal = p.price * cart[id];
+    totalPrice += itemTotal;
+    
+    return `
+      <div class="cart-item">
+        <img src="${p.img}" alt="${p.name}" class="cart-item-img">
+        <div class="cart-item-details">
+          <div class="cart-item-name">${p.name}</div>
+          <div class="cart-item-weight">${p.weight}</div>
+          <div class="cart-item-price">${formatPrice(p.price)} each</div>
+        </div>
+        <div class="cart-item-controls">
+          <button class="qty-btn" onclick="changeQty(${id}, -1)">−</button>
+          <span class="qty-display">${cart[id]}</span>
+          <button class="qty-btn" onclick="changeQty(${id}, 1)">+</button>
+          <button class="remove-item" onclick="removeItem(${id})">🗑</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  summaryRows.innerHTML = cartKeys.map(id => {
+    const p = products.find(pr => pr.id == id);
+    const itemTotal = p.price * cart[id];
+    return `<div class="order-summary-row"><span>${p.name} ×${cart[id]}</span><span>${formatPrice(itemTotal)}</span></div>`;
+  }).join('');
+
+  document.getElementById('summaryTotalPrice').textContent = formatPrice(totalPrice);
+
+  summary.style.display = 'block';
+  form.style.display = 'block';
+}
+
+function changeQty(id, delta) {
+  cart[id] = Math.max(0, (cart[id] || 0) + delta);
+  if (cart[id] === 0) delete cart[id];
+  updateCartCount();
+  renderCartItems();
+}
+
+function removeItem(id) {
+  delete cart[id];
+  updateCartCount();
+  renderCartItems();
+}
+
+function submitOrder() {
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const address = document.getElementById('custAddress').value.trim();
+
+  if (!name || !phone || !address) {
+    showToast('Please fill in all fields', true);
+    return;
+  }
+
+  const cartKeys = Object.keys(cart).filter(k => cart[k] > 0);
+  if (cartKeys.length === 0) {
+    showToast('Your cart is empty!', true);
+    return;
+  }
+
+  let totalPrice = 0;
+  const orderLines = cartKeys.map(id => {
+    const p = products.find(pr => pr.id == id);
+    const itemTotal = p.price * cart[id];
+    totalPrice += itemTotal;
+    return `• ${p.name} (${p.weight}) × ${cart[id]} = ₦${itemTotal.toLocaleString()}`;
+  }).join('\n');
+
+  const msg = encodeURIComponent(
+    `Hello Wholeness! I'd like to place an order:\n\n*ORDER DETAILS*\n${orderLines}\n\n*TOTAL: ₦${totalPrice.toLocaleString()}*\n\n*CUSTOMER DETAILS*\nName: ${name}\nPhone: ${phone}\nDelivery Address: ${address}\n\nKindly confirm my order and delivery. Thank you!`
+  );
+
+  window.open(`https://wa.me/2348068743168?text=${msg}`, '_blank');
+
+  cart = {};
+  updateCartCount();
+  document.getElementById('cartItemsSection').style.display = 'none';
+  document.getElementById('successScreen').classList.add('active');
+  
+  // Reset success screen after delay
+  setTimeout(() => {
+    document.getElementById('successScreen').classList.remove('active');
+    document.getElementById('cartItemsSection').style.display = 'block';
+    document.getElementById('custName').value = '';
+    document.getElementById('custPhone').value = '';
+    document.getElementById('custAddress').value = '';
+    toggleCart();
+  }, 5000);
+}
+
+function showToast(msg, isError=false) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  toast.style.background = isError ? '#c0392b' : '#2d6a2f';
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// Close mobile menu when clicking links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('active');
+  });
+});
+
+// Init
+renderProducts();
+</script>
+</body>
+</html>
